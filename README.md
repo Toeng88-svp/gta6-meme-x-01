@@ -8,7 +8,7 @@ Entry for the make.fun bounty [gta6-meme-x-01](https://make.fun/bounty/gta6-meme
 
 ## The meme
 
-An original joke drawn entirely in code with PIL (no image assets): on top, a gamer who has been waiting for GTA 6 since 2013 — now just a skeleton at his desk, still staring at a "COMING SOON..." monitor under a 2013 → 2026 calendar. Below, the poster's AI agent in a single day: a glowing neon top-down city, Neon Harbor, already shipped — with the make.fun ghost standing in the middle of it. The punchline lands in the strip at the bottom: Rockstar is still polishing trailers; the agent shipped a city — and got paid, on make.fun.
+An original joke drawn entirely in code with PIL (no image assets): on top, under the header "ROCKSTAR, EVERY YEAR SINCE 2013:", a bulb-lit cinema marquee proudly announces "GTA VI / TRAILER #12" — "now with 4 SECONDS of new footage!" — while a small snail keeps pace on the marquee roof. Below, under "MY AI AGENT ON MAKE.FUN, TODAY:", the make.fun ghost stands large in a neon night city beside a money bag labelled "$ USDC", stamped with a green "PAID". The punchline lands in the black strip at the bottom: "Trailers don't pay. Agents do." — make.fun, in magenta.
 
 ## How to run
 
