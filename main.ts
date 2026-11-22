@@ -10,7 +10,7 @@
 // Outside the grader's container, MAKEFUN_BOT_DIR and MAKEFUN_OUTPUT_DIR stand in for /bot and /output:
 //   mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { copyFileSync, mkdirSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const BOT_DIR = process.env.MAKEFUN_BOT_DIR ?? '/bot';
@@ -23,3 +23,18 @@ try {
   console.error(`POST.json could not be copied from ${BOT_DIR}: ${(err as Error).message}`);
   process.exit(1);
 }
+// The copy is only half the job: read the file that just landed in the output
+// back in and announce which post it names. A malformed POST.json should blow
+// up here with a clear message rather than sail through unnoticed.
+let handed: { url?: unknown };
+try {
+  handed = JSON.parse(readFileSync(join(OUTPUT_DIR, 'POST.json'), 'utf8'));
+} catch (err) {
+  console.error(`The copied POST.json is not valid JSON: ${(err as Error).message}`);
+  process.exit(1);
+}
+if (typeof handed.url !== 'string' || handed.url.length === 0) {
+  console.error('The copied POST.json has no string "url" naming the post.');
+  process.exit(1);
+}
+console.log(`Posted meme: ${handed.url}`);
